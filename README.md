@@ -18,16 +18,19 @@
 - **💾 Persistent Configuration**: Save preferences between sessions
 - **📈 JSON Export**: Structured data for automation and reporting
 
-### Web Analyzer Module
-- **🌐 Quick Scan**: Basic HTTP information
-- **🔍 DNS Reconnaissance**: A, MX, TXT record analysis
-- **📍 IP Geolocation**: IP address location and ISP info
-- **🔒 SSL/TLS Analysis**: Certificate validation and expiration
-- **🛡️ Security Headers**: Security header presence and configuration
-- **🔌 Port Scanning**: Common port detection
-- **🛠️ Technology Detection**: Web server and framework identification
-- **📋 Full Reconnaissance**: Complete all-in-one scan
-- **📦 Batch Processing**: Scan multiple targets from file
+### Web Analyzer Module (v2.0.0)
+- **🌐 Quick Scan**: Basic HTTP information (status, server, encoding)
+- **🔍 DNS Reconnaissance**: A, AAAA, MX, TXT, NS record analysis
+- **📍 IP Geolocation**: IP address location, ISP, reverse DNS
+- **🔒 SSL/TLS Analysis**: Certificate validation, expiry warnings, cipher detection, SANs
+- **🛡️ Security Headers**: CSP, HSTS, X-Frame-Options, Referrer-Policy analysis with recommendations
+- **🔴 HTTP Methods Scan**: Detects dangerous methods (TRACE, PUT, DELETE)
+- **📄 Content Analysis**: Email extraction, meta tags, phone numbers, sensitive path detection
+- **⚡ Performance Metrics**: Response time, compression, caching, speed ratings
+- **🔌 Port Scanning**: 21 common ports including PostgreSQL, Redis, Elasticsearch
+- **🛠️ Technology Detection**: CMS, JS frameworks, CSS, backend language, analytics tools
+- **📋 Full Reconnaissance**: Complete all-in-one scan with structured output
+- **📦 Batch Processing**: Scan multiple targets from file with timestamped results
 
 ---
 
@@ -82,13 +85,31 @@ python main.py
 ```
 ┌─────────────────────────────────────────────┐
 │ Available Modules:                          │
-│ 1. Web Analyzer                             │
-│ 2. [Future Module]                          │
+│ 1. Web Analyzer (v2.0.0)                    │
 │                                             │
 │ T. Load Target (URL/IP or File)             │
 │ C. Configuration & Settings                 │
 │ H. Help & Information                       │
 │ Q. Exit                                     │
+└─────────────────────────────────────────────┘
+```
+
+### Web Analyzer Scan Menu
+```
+┌─────────────────────────────────────────────┐
+│  1. Quick Scan                              │
+│  2. DNS Reconnaissance                      │
+│  3. IP & Geolocation Info                   │
+│  4. SSL/TLS Certificate Analysis            │
+│  5. Security Headers Analysis               │
+│  6. HTTP Methods Scan                       │
+│  7. Content Analysis                        │
+│  8. Performance Metrics                     │
+│  9. Port Scanning                           │
+│ 10. Technology Detection                    │
+│ 11. Full Reconnaissance Scan                │
+│ 12. Batch Scan from Loaded Targets          │
+│  B. Back to Main Menu                       │
 └─────────────────────────────────────────────┘
 ```
 
@@ -124,7 +145,7 @@ Access via `C` from main menu:
 
 ## 📊 Examples
 
-### Example 1: Single Target Full Scan
+### Example 1: Single Target Full Recon
 ```bash
 # Run CobraScan
 python main.py
@@ -132,63 +153,260 @@ python main.py
 # Load target
 Press T -> 1 -> https://example.com
 
-# Run Web Analyzer
-Press 1 -> 8 (Full Reconnaissance)
+# Run Web Analyzer - Full Recon
+Press 1 -> 11 (Full Reconnaissance Scan)
 
-# Results saved to cobra_scan_results.json
+# Results saved to cobra_scan_results.json with all analysis
 ```
 
-### Example 2: Batch Security Check
+### Example 2: Security Headers & SSL Check
+```bash
+python main.py
+Press T -> 1 -> https://bank.example.com
+
+# Check security headers
+Press 1 -> 5 (Security Headers Analysis)
+
+# Check SSL certificate
+Press 1 -> 4 (SSL/TLS Certificate Analysis)
+```
+
+### Example 3: Batch Security Assessment
 ```bash
 # Create target list
 echo "https://site1.com" > targets.txt
 echo "https://site2.com" >> targets.txt
+echo "https://site3.com" >> targets.txt
 
 # Run batch scan
 python main.py
 Press T -> 2 -> targets.txt
-Press 1 -> 9 (Batch Scan)
+Press 1 -> 12 (Batch Scan from Loaded Targets)
 
-# Results in batch_YYYYMMDD_HHMMSS.json
+# Results in batch_YYYYMMDD_HHMMSS.json with all scans
 ```
 
-### Example 3: Quick SSL Check
+### Example 4: Content & Performance Analysis
 ```bash
 python main.py
-Press T -> 1 -> https://bank.example.com
-Press 1 -> 4 (SSL/TLS Analysis)
+Press T -> 1 -> https://example.com
+
+# Check performance metrics
+Press 1 -> 8 (Performance Metrics)
+
+# Analyze page content
+Press 1 -> 7 (Content Analysis)
+
+# Detect technologies
+Press 1 -> 10 (Technology Detection)
 ```
 
-### Sample JSON Output
+### Sample JSON Output (Full Recon)
 ```json
-{
-  "scan_type": "full_recon",
-  "timestamp": "2024-01-15T10:30:00Z",
-  "target": "https://example.com",
-  "results": {
+  {
+    "scan_info": {
+      "url": "https://httpbin.org/",
+      "requested_url": "https://httpbin.org/",
+      "hostname": "httpbin.org",
+      "scan_timestamp": "2026-01-22T17:43:46.855101"
+    },
     "http_info": {
       "status_code": 200,
-      "headers": {...}
+      "reason": "OK",
+      "is_ok": true,
+      "encoding": "utf-8",
+      "apparent_encoding": "Windows-1252"
+    },
+    "headers": {
+      "Date": "Thu, 22 Jan 2026 17:43:46 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": "9593",
+      "Connection": "keep-alive",
+      "Server": "gunicorn/19.9.0",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true"
+    },
+    "cookies": {},
+    "redirects": [],
+    "performance": {
+      "response_time_ms": 403.8,
+      "content_size_bytes": 9593,
+      "content_size_kb": 9.37,
+      "headers_count": 7,
+      "gzip_enabled": false,
+      "cache_control": "Not set",
+      "compression": "None",
+      "performance_rating": "EXCELLENT"
+    },
+    "content_analysis": {
+      "emails": [
+        "me@kennethreitz.org"
+      ],
+      "phone_numbers": [],
+      "meta_tags": {},
+      "page_title": "httpbin.org",
+      "sensitive_paths": [],
+      "word_count": 641
     },
     "dns_info": {
-      "a_records": ["93.184.216.34"],
-      "mx_records": ["10 mail.example.com."]
+      "a_records": [
+        "54.147.217.198",
+        "18.207.71.162",
+        "98.88.114.252",
+        "54.80.48.62",
+        "98.88.224.123",
+        "52.20.30.6"
+      ],
+      "aaaa_records": "No AAAA records found",
+      "mx_records": "No MX records found",
+      "txt_records": [
+        "\"v=spf1 -all\""
+      ],
+      "ns_records": [
+        "ns-1053.awsdns-03.org.",
+        "ns-1555.awsdns-02.co.uk.",
+        "ns-173.awsdns-21.com.",
+        "ns-884.awsdns-46.net."
+      ]
+    },
+    "ip_info": {
+      "ip_address": "98.88.114.252",
+      "reverse_dns": "ec2-98-88-114-252.compute-1.amazonaws.com",
+      "geolocation": {
+        "country": "United States",
+        "region": "Virginia",
+        "city": "Ashburn",
+        "isp": "Amazon.com",
+        "org": "AWS EC2 (us-east-1)"
+      }
     },
     "ssl_info": {
-      "valid": true,
-      "expires_in": 89,
-      "issuer": "Let's Encrypt"
+      "certificate": {
+        "issuer": {
+          "countryName": "US",
+          "organizationName": "Amazon",
+          "commonName": "Amazon RSA 2048 M03"
+        },
+        "subject": {
+          "commonName": "httpbin.org"
+        },
+        "version": 3,
+        "serialNumber": "0E2558D492728E9C01A8DADEDC05D13D",
+        "notBefore": "Jul 20 00:00:00 2025 GMT",
+        "notAfter": "Aug 17 23:59:59 2026 GMT"
+      },
+      "subject_alternative_names": [
+        "httpbin.org",
+        "*.httpbin.org"
+      ],
+      "days_until_expiry": 207,
+      "expiry_date": "2026-08-17T23:59:59",
+      "cert_valid": true,
+      "cert_status": "VALID",
+      "tls_version": "TLSv1.2",
+      "cipher": "ECDHE-RSA-AES128-GCM-SHA256"
+    },
+    "http_methods": {
+      "allowed_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "HEAD",
+        "OPTIONS",
+        "TRACE",
+        "PATCH"
+      ],
+      "vulnerable_methods": [
+        {
+          "method": "PUT",
+          "risk": "HIGH",
+          "description": "PUT method is enabled - potential security risk"
+        },
+        {
+          "method": "DELETE",
+          "risk": "HIGH",
+          "description": "DELETE method is enabled - potential security risk"
+        },
+        {
+          "method": "TRACE",
+          "risk": "HIGH",
+          "description": "TRACE method is enabled - potential security risk"
+        }
+      ],
+      "method_count": 8
     },
     "security_headers": {
-      "hsts": true,
-      "csp": false,
-      "x_frame_options": true
+      "Content-Security-Policy": {
+        "present": false,
+        "value": null,
+        "description": "Prevents XSS attacks by controlling resource loading"
+      },
+      "Strict-Transport-Security": {
+        "present": false,
+        "value": null,
+        "description": "Enforces HTTPS connections"
+      },
+      "X-Frame-Options": {
+        "present": false,
+        "value": null,
+        "description": "Prevents clickjacking attacks"
+      },
+      "X-Content-Type-Options": {
+        "present": false,
+        "value": null,
+        "description": "Prevents MIME type sniffing"
+      },
+      "X-XSS-Protection": {
+        "present": false,
+        "value": null,
+        "description": "Legacy XSS protection header"
+      },
+      "Referrer-Policy": {
+        "present": false,
+        "value": null,
+        "description": "Controls referrer information"
+      },
+      "Permissions-Policy": {
+        "present": false,
+        "value": null,
+        "description": "Controls browser features and APIs"
+      },
+      "X-Permitted-Cross-Domain-Policies": {
+        "present": false,
+        "value": null,
+        "description": "Controls cross-domain policies"
+      },
+      "vulnerabilities": [
+        "Missing Content-Security-Policy",
+        "Missing Strict-Transport-Security",
+        "Missing X-Frame-Options",
+        "Missing X-Content-Type-Options",
+        "Missing X-XSS-Protection",
+        "Missing Referrer-Policy",
+        "Missing Permissions-Policy",
+        "Missing X-Permitted-Cross-Domain-Policies"
+      ]
     },
     "open_ports": [
-      {"port": 443, "service": "HTTPS", "status": "open"}
-    ]
+      {
+        "port": 80,
+        "service": "HTTP",
+        "status": "open"
+      },
+      {
+        "port": 443,
+        "service": "HTTPS",
+        "status": "open"
+      }
+    ],
+    "technologies": {
+      "javascript_libraries": [
+        "jquery",
+        "react"
+      ]
+    }
   }
-}
 ```
 
 ## 🔌 Module Development
@@ -245,13 +463,15 @@ Press 1 -> 4 (SSL/TLS Analysis)
 - ✅ **Web Analyzer** - Comprehensive web target analysis
 
 ### Planned Modules
-- 🔄 **Subdomain Scanner** - Automated subdomain discovery
-- 📋 **Vulnerability Scanner** - CVE and OWASP Top 10 checks
-- 🔌 **API Security Tester** - REST/GraphQL endpoint testing
-- 📁 **Directory Brute Forcer** - Hidden file discovery
-- 🗺️ **Network Mapper** - Network topology visualization
-- 🔍 **OSINT Collector** - Open-source intelligence gathering
-- 📝 **Report Generator** - Professional HTML/PDF reports
+- 🔄 **Subdomain Scanner** - Automated subdomain discovery with DNS enumeration
+- 📋 **Vulnerability Scanner** - CVE detection and OWASP Top 10 checks
+- 🔌 **API Security Tester** - REST/GraphQL endpoint testing and validation
+- 📁 **Directory Brute Forcer** - Hidden file and directory discovery
+- 🗺️ **Network Mapper** - Network topology visualization and CIDR scanning
+- 🔍 **OSINT Collector** - Open-source intelligence gathering and correlation
+- 📝 **Report Generator** - Professional HTML/PDF/XLSX reporting
+- 🔐 **Credential Tester** - Authorized credential validation
+- 🌐 **Wayback Machine Scanner** - Historical snapshot analysis
 
 ### Core Enhancements
 - ⚡ Multi-threading support
@@ -264,23 +484,36 @@ Press 1 -> 4 (SSL/TLS Analysis)
 
 ## 📝 Changelog
 
-### Version 1.2.5 (Current)
--  Modular Architecture: Complete refactor to plugin system
--  Dynamic Module Loading: Automatic menu generation
--  Module Template: Easy module creation
--  Improved Structure: Better code organization
--  Bug Fixes: Banner spacing and error handling
+### Version 1.3.0 (Current)
+- **Web Analyzer v2.0.0**: Major expansion with 12 scan types
+  - ✨ New: HTTP Methods vulnerability scanning (TRACE, PUT, DELETE detection)
+  - ✨ New: Content analysis (emails, meta tags, sensitive paths)
+  - ✨ New: Performance metrics (response time, compression, caching analysis)
+  - ✨ New: Enhanced SSL analysis with certificate warnings and expiry tracking
+  - ✨ New: Security headers with vulnerability recommendations
+  - ✨ New: IPv6 DNS records support (AAAA records)
+  - ✨ New: Expanded port scanning (21 ports including PostgreSQL, Redis, Elasticsearch)
+  - 🔧 Refactored: Structured JSON output with logical sections
+  - 🐛 Fixed: All spacing and formatting issues
+  - 📈 Improved: Better error handling and user feedback
+
+### Version 1.2.5
+- Modular Architecture: Complete refactor to plugin system
+- Dynamic Module Loading: Automatic menu generation
+- Module Template: Easy module creation
+- Improved Structure: Better code organization
+- Bug Fixes: Banner spacing and error handling
 
 ### Version 1.2.0
--  Rebranded to CobraScan
+- Rebranded to CobraScan
 - Target Manager: Single and batch scanning
--  Configuration System: Persistent settings
--  Enhanced UI: Improved user interface
+- Configuration System: Persistent settings
+- Enhanced UI: Improved user interface
 
 ### Version 1.0.0
--  Initial Release
--  Basic Scanning: Core functionality
--  JSON Export: Structured output
+- Initial Release
+- Basic Scanning: Core functionality
+- JSON Export: Structured output
 
 [View full changelog](CHANGELOG.md)
 
@@ -341,7 +574,7 @@ CobraScan/
 ---
 
 <div align="center">
-
+s
 ## 🐍 CobraScan - The All-Seeing Reconnaissance Tool
 
 *In the realm of security, visibility is power. CobraScan grants you omniscience.*
