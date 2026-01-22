@@ -14,7 +14,7 @@ import datetime
 import json
 import time
 
-from utils import Colors, clear_screen
+from helpers.utils import Colors, clear_screen
 
 
 class WebAnalyzer:

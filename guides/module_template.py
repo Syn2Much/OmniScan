@@ -8,7 +8,7 @@ import time
 import json
 import datetime
 
-from utils import Colors, clear_screen
+from CobraScan.helpers.utils import Colors, clear_screen
 
 
 class ModuleTemplate:

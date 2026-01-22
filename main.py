@@ -8,8 +8,8 @@ import sys
 import argparse
 import signal
 
-from target_manager import TargetManager
-from utils import Colors, clear_screen
+from helpers.target_manager import TargetManager
+from helpers.utils import Colors, clear_screen
 
 
 class CobraScanner:  
