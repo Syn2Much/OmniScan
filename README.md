@@ -5,7 +5,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Syn2Much/omniscan/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Syn2Much/OmniScan/graphs/commit-activity)
 
 
 ---
@@ -53,8 +53,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/Syn2Much/omniscan.git
-cd omniscan
+git clone https://github.com/Syn2Much/OmniScan.git
+cd OmniScan
 
 # Install dependencies
 pip install -r requirements.txt
@@ -131,20 +131,20 @@ Access the configuration menu by pressing **C** from the main menu.
 | Setting | Description | Default |
 |---------|-------------|---------|
 | **Timeout** | Request timeout in seconds | 10 |
-| **Output File** | JSON output filename | `omniscan_results.json` |
+| **Output File** | JSON output filename | `OmniScan_results.json` |
 | **Auto-Save** | Automatically save detailed scans | True |
 | **Verbose** | Enable verbose output | True |
 
 ### Saving/Loading Configuration
 
-Configuration is saved to `omniscan_config.json` and persists between sessions.
+Configuration is saved to `OmniScan_config.json` and persists between sessions.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-omniscan/
+OmniScan/
 │
 ├── main.py                 # Main GUI application
 ├── web_analyzer.py         # Core scanning engine
@@ -154,8 +154,8 @@ omniscan/
 ├── README. md               # This file
 │
 ├── targets.txt             # Sample target list (user-created)
-├── omniscan_config.json    # Configuration file (auto-generated)
-└── omniscan_results.json   # Scan results (auto-generated)
+├── OmniScan_config.json    # Configuration file (auto-generated)
+└── OmniScan_results.json   # Scan results (auto-generated)
 ```
 
 ---
@@ -169,7 +169,7 @@ omniscan/
 2. Select option '1' (Load Single URL/IP)
 3. Enter: https://example.com
 4. Press '8' for Full Reconnaissance Scan
-5. Results saved to omniscan_results. json
+5. Results saved to OmniScan_results. json
 ```
 
 ### Example 2: Batch Scanning
@@ -468,8 +468,8 @@ SOFTWARE.
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/Syn2Much/omniscan/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/Syn2Much/omniscan/discussions)
+- **Issues:** [GitHub Issues](https://github.com/Syn2Much/OmniScan/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Syn2Much/OmniScan/discussions)
 - **Email:** dev@sinners.city
 
 ---
@@ -492,7 +492,7 @@ SOFTWARE.
 
 ⭐ **Star this repo if you find it useful!** ⭐
 
-[Report Bug](https://github.com/Syn2Much/omniscan/issues) · [Request Feature](https://github.com/Syn2Much/omniscan/issues) · [Documentation](https://github.com/Syn2Much/omniscan/wiki)
+[Report Bug](https://github.com/Syn2Much/OmniScan/issues) · [Request Feature](https://github.com/Syn2Much/OmniScan/issues) · [Documentation](https://github.com/Syn2Much/OmniScan/wiki)
 
 ---
 
