@@ -1,7 +1,8 @@
 
-# OmniScan 🔍
+# OmniScan 🔍 
+ A comprehensive web reconnaissance tool that performs multiple security scans and analyses in one unified interface.
 
-> **Omni** (Latin:  "all", "every") - A comprehensive scanning solution that sees all aspects of your target.
+> **Omni** (Latin:  "all", "every") - of all things.
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -10,17 +11,22 @@
 
 ---
 
-##  Features
+## 🚀 Features
 
-### 🎯 Core Scanning Capabilities
-- **Quick Scan** - Fast HTTP reconnaissance with response time analysis
-- **DNS Reconnaissance** - A, MX, TXT, and NS record enumeration
-- **IP & Geolocation** - IP resolution with geographic location data
-- **SSL/TLS Analysis** - Certificate validation and expiration monitoring
-- **Security Headers** - Comprehensive security header analysis
-- **Port Scanning** - Common port detection with service identification
-- **Technology Detection** - CMS, frameworks, and web server fingerprinting
-- **Full Reconnaissance** - Complete scan with JSON export
+
+### 🔍 **Scanning Capabilities**
+
+| Scan Type | Description |
+|-----------|-------------|
+| **Quick Scan** | Basic HTTP information (status, headers, response time) |
+| **DNS Reconnaissance** | DNS record analysis (A, MX, TXT records) |
+| **IP & Geolocation** | IP address resolution and geolocation data |
+| **SSL/TLS Analysis** | Certificate validation and expiration checks |
+| **Security Headers** | Analysis of critical security headers |
+| **Port Scanning** | Common port scanning for open services |
+| **Technology Detection** | CMS, frameworks, and technology stack detection |
+| **Full Reconnaissance** | Complete scan with all modules (saves to JSON) |
+| **Batch Scanning** | Scan multiple targets from file |
 
 ### 🎨 User Interface
 - Beautiful color-coded terminal interface
