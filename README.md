@@ -11,48 +11,29 @@
 
 ---
 
-## 🚀 Features
+## 📚 Menu Options
 
-
-### 🔍 **Scanning Capabilities**
-
-| Scan Type | Description |
-|-----------|-------------|
-| **Quick Scan** | Basic HTTP information (status, headers, response time) |
-| **DNS Reconnaissance** | DNS record analysis (A, MX, TXT records) |
-| **IP & Geolocation** | IP address resolution and geolocation data |
-| **SSL/TLS Analysis** | Certificate validation and expiration checks |
-| **Security Headers** | Analysis of critical security headers |
-| **Port Scanning** | Common port scanning for open services |
-| **Technology Detection** | CMS, frameworks, and technology stack detection |
-| **Full Reconnaissance** | Complete scan with all modules (saves to JSON) |
-| **Batch Scanning** | Scan multiple targets from file |
-
-### 🎨 User Interface
-- Beautiful color-coded terminal interface
-- Interactive menu-driven navigation
-- Real-time progress indicators
-- Graceful error handling
-- Cross-platform support (Windows, Linux, macOS)
-
-### 📋 Target Management
-- **Single Target** - Scan individual URLs or IP addresses
-- **Batch Scanning** - Load and scan multiple targets from file
-- **File Format Support** - Simple text file with one target per line
-- **Comment Support** - Use `#` for comments in target files
-
-### 💾 Data Export
-- JSON format for detailed scans
-- Timestamped batch scan results
-- Automatic result logging
-- Configurable output files
+| Option | Function | Output |
+|--------|----------|--------|
+| **T** | Load Target (URL/IP or File) | - |
+| **1** | Quick Scan (Basic HTTP Info) | Screen |
+| **2** | DNS Reconnaissance | Screen |
+| **3** | IP & Geolocation Info | Screen |
+| **4** | SSL/TLS Certificate Analysis | Screen |
+| **5** | Security Headers Analysis | Screen |
+| **6** | Port Scanning | Screen |
+| **7** | Technology Detection | Screen |
+| **8** | Full Reconnaissance Scan | **JSON File** |
+| **9** | Batch Scan from Loaded Targets | **JSON File** |
+| **C** | Configuration & Settings | - |
+| **H** | Help & Information | - |
+| **Q** | Exit | - |
 
 ---
-
 ## 📦 Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3
 - pip package manager
 
 ### Quick Start
@@ -67,13 +48,6 @@ pip install -r requirements.txt
 
 # Run the application
 python main.py
-```
-
-### Manual Installation
-
-```bash
-# Install required packages
-pip install requests dnspython
 ```
 
 ---
@@ -108,25 +82,6 @@ https://client2.net
 
 ---
 
-## 📚 Menu Options
-
-| Option | Function | Output |
-|--------|----------|--------|
-| **T** | Load Target (URL/IP or File) | - |
-| **1** | Quick Scan (Basic HTTP Info) | Screen |
-| **2** | DNS Reconnaissance | Screen |
-| **3** | IP & Geolocation Info | Screen |
-| **4** | SSL/TLS Certificate Analysis | Screen |
-| **5** | Security Headers Analysis | Screen |
-| **6** | Port Scanning | Screen |
-| **7** | Technology Detection | Screen |
-| **8** | Full Reconnaissance Scan | **JSON File** |
-| **9** | Batch Scan from Loaded Targets | **JSON File** |
-| **C** | Configuration & Settings | - |
-| **H** | Help & Information | - |
-| **Q** | Exit | - |
-
----
 
 ## 🔧 Configuration
 
@@ -146,6 +101,7 @@ Access the configuration menu by pressing **C** from the main menu.
 Configuration is saved to `OmniScan_config.json` and persists between sessions.
 
 ---
+
 
 ## 📁 Project Structure
 
@@ -370,13 +326,6 @@ SOFTWARE.
 
 ---
 
-## 🙏 Acknowledgments
-
-- **Requests Library** - HTTP for Humans
-- **dnspython** - DNS toolkit for Python
-- **Open Source Community** - For inspiration and support
----
-
 ## 📞 Support
 
 - **Issues:** [GitHub Issues](https://github.com/Syn2Much/OmniScan/issues)
@@ -395,11 +344,10 @@ SOFTWARE.
 
 <div align="center">
 
-**Made with ❤️ by Syn2Much**
 
-### 🌟 OmniScan - See Everything 🌟
+### 🕵️ OmniScan - The All Knowing Recon Tool 🕵️
 
-*Omnipotent · Omniscient · Omnipresent Reconnaissance*
+*"In the world of reconnaissance, knowledge is power. OmniScan gives you all-seeing eyes."*
 
 ⭐ **Star this repo if you find it useful!** ⭐
 
@@ -407,8 +355,7 @@ SOFTWARE.
 
 ---
 
-**"In the world of reconnaissance, knowledge is power. OmniScan gives you all-seeing eyes."**
 
 </div>
-```
+
 
