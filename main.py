@@ -17,7 +17,7 @@ class CobraScanner:
     
     def __init__(self):
         self.app_name = "Cobra"
-        self.version = "1.2.5"
+        self.version = "1.3.0"
         self.config = {
             'timeout': 10,
             'output_file': 'cobra_scan_results.json',
