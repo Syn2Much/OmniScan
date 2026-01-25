@@ -1,6 +1,6 @@
 # Cobra
 
-*a modular web/domain reconnaissance tool designed for security professionals, ethical hackers, and system administrators.*
+*a modular web/domain reconnaissance tool designed for security professionals, ethical hackers, and redteam operators*
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
