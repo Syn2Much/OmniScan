@@ -603,7 +603,6 @@ class WebAnalyzerModule:
         """Print module status."""
         current = target_manager.get_current_target()
         target_list = target_manager.get_target_list()
-
         if current:
             target_display = f"Single: {current[:35]}..."
         elif target_list:

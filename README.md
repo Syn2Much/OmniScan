@@ -641,7 +641,6 @@ CobraScan/
 │
 ├── main.py                 # Main application entry point
 ├── README.md               # Documentation
-├── CLAUDE.md               # AI assistant guidance
 ├── requirements.txt        # Python dependencies
 │
 ├── helpers/                # Helper modules
@@ -692,10 +691,6 @@ CobraScan/
 ---
 
 <div align="center">
-s
-## 🐍 CobraScan - The All-Seeing Reconnaissance Tool
-
-*In the realm of security, visibility is power. CobraScan grants you omniscience.*
 
 **⭐ If you find this useful, please give it a star! ⭐**
 
