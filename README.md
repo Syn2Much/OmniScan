@@ -1,7 +1,6 @@
 # Cobra Scan 🐍
 
-*a powerful, modular reconnaissance tool designed for security professionals, ethical hackers, and system administrators. Perform deep Vulnerability Scans using Cobras 4 scan modules. Generate styled personalized pentest/vulnerability reports hosted on a flask web interface.
-
+*a powerful, modular reconnaissance tool designed for security professionals, ethical hackers, and system administrators.* 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Syn2Much/CobraScan/graphs/commit-activity)
