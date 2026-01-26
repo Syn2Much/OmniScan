@@ -8,6 +8,8 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Syn2Much/CobraScan/graphs/commit-activity)
 
 ---
+![Animation](https://github.com/user-attachments/assets/24c352a3-f529-468d-b253-28a01961f133)
+
 
 ## ✨ Features
 
