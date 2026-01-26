@@ -23,7 +23,7 @@
 
 ### Vulnerability Scanner Module (v1.0.0) - NEW 🔓
 
-- **📋 OWASP Top 10**: Complete coverage of OWASP Top 10 2021 categories
+- **📋 OWASP Top 10**: Complete coverage of OWASP Top 10  categories
 - **🔍 CVE Detection**: Known vulnerable software signatures (Apache, PHP, jQuery, WordPress, etc.)
 - **💉 Injection Testing**: XSS (reflected), SQL injection, command injection, path traversal
 - **🔒 SSL/TLS Analysis**: TLS version, cipher strength, certificate expiry checks
@@ -143,58 +143,7 @@ python main.py
 └─────────────────────────────────────────────┘
 ```
 
-### Web Analyzer Scan Menu
-
-```
-┌─────────────────────────────────────────────┐
-│  1. Quick Scan                              │
-│  2. DNS Reconnaissance                      │
-│  3. IP & Geolocation Info                   │
-│  4. SSL/TLS Certificate Analysis            │
-│  5. Security Headers Analysis               │
-│  6. HTTP Methods Scan                       │
-│  7. Content Analysis                        │
-│  8. Performance Metrics                     │
-│  9. Port Scanning                           │
-│ 10. Technology Detection                    │
-│ 11. Full Reconnaissance Scan                │
-│ 12. Batch Scan from Loaded Targets          │
-│  B. Back to Main Menu                       │
-└─────────────────────────────────────────────┘
-```
-
-### Sensitive Path Finder Menu
-
-```
-┌─────────────────────────────────────────────┐
-│  1. Admin/Login Paths (40 paths)            │
-│  2. CMS Paths (WP/Joomla) (45 paths)        │
-│  3. API/Hidden Endpoints (45 paths)         │
-│  4. Sensitive Files (70 paths)              │
-│  5. All Paths Combined (~200 paths)         │
-│  6. Custom Wordlist                         │
-│  7. Batch Scan (All Targets)                │
-│  B. Back to Main Menu                       │
-└─────────────────────────────────────────────┘
-```
-
-### Subdomain Enumeration Menu
-
-```
-┌─────────────────────────────────────────────┐
-│  1. Quick Enum (150 subdomains)             │
-│  2. Deep Enum (250+ subdomains)             │
-│  3. Certificate Transparency (crt.sh)       │
-│  4. Zone Transfer (AXFR)                    │
-│  5. Reverse DNS Scan                        │
-│  6. Full Enumeration (All Methods)          │
-│  7. Custom Wordlist                         │
-│  8. Batch Scan (All Targets)                │
-│  B. Back to Main Menu                       │
-└─────────────────────────────────────────────┘
-```
-
-### Vulnerability Scanner Menu
+### Example of Vulnerability Scanner Menu
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -271,69 +220,9 @@ Access via `C` from main menu:
 - Auto-save preferences
 - Verbose mode toggle
 
+
 ---
 
-## 📊 Examples
-
-### Example 1: Single Target Full Recon
-
-```bash
-# Run CobraScan
-python main.py
-
-# Load target
-Press T -> 1 -> https://example.com
-
-# Run Web Analyzer - Full Recon
-Press 1 -> 11 (Full Reconnaissance Scan)
-
-# Results saved to cobra_scan_results.json with all analysis
-```
-
-### Example 2: Security Headers & SSL Check
-
-```bash
-python main.py
-Press T -> 1 -> https://bank.example.com
-
-# Check security headers
-Press 1 -> 5 (Security Headers Analysis)
-
-# Check SSL certificate
-Press 1 -> 4 (SSL/TLS Certificate Analysis)
-```
-
-### Example 3: Batch Security Assessment
-
-```bash
-# Create target list
-echo "https://site1.com" > targets.txt
-echo "https://site2.com" >> targets.txt
-echo "https://site3.com" >> targets.txt
-
-# Run batch scan
-python main.py
-Press T -> 2 -> targets.txt
-Press 1 -> 12 (Batch Scan from Loaded Targets)
-
-# Results in batch_YYYYMMDD_HHMMSS.json with all scans
-```
-
-### Example 4: Content & Performance Analysis
-
-```bash
-python main.py
-Press T -> 1 -> https://example.com
-
-# Check performance metrics
-Press 1 -> 8 (Performance Metrics)
-
-# Analyze page content
-Press 1 -> 7 (Content Analysis)
-
-# Detect technologies
-Press 1 -> 10 (Technology Detection)
-```
 
 ### Sample JSON Output (Full Recon)
 
@@ -628,71 +517,17 @@ Press 1 -> 10 (Technology Detection)
 ## 📝 Changelog
 
 ### Version 1.6.0 (Current)
-
 - **Vulnerability Scanner v1.0.0**: New comprehensive security assessment module
-  - ✨ New: OWASP Top 10 2021 complete coverage
-  - ✨ New: CVE detection for Apache, PHP, jQuery, WordPress, OpenSSL
-  - ✨ New: Reflected XSS vulnerability testing
-  - ✨ New: SQL injection error-based detection
-  - ✨ New: Path traversal/LFI testing
-  - ✨ New: Open redirect vulnerability detection
-  - ✨ New: SSL/TLS version and cipher analysis
-  - ✨ New: Security header analysis with recommendations
-  - ✨ New: CORS misconfiguration detection
-  - ✨ New: Sensitive file exposure scanning
-  - ✨ New: Severity-based findings with OWASP mapping
-  - ✨ New: Batch scanning support
-
 - **Results Manager**: Enhanced results handling
-  - ✨ New: View and clear scan results from CLI
-  - ✨ New: Generate HTML security reports
-  - ✨ New: Host reports via Flask server
-  - ✨ New: Reports grouped by target (no duplicates)
-
 ### Version 1.5.0
-
 - **Proxy Support**: HTTP/HTTPS proxy integration across all modules
-  - ✨ New: Load proxies from text file (one per line)
-  - ✨ New: Support for multiple formats (ip:port, http://, https://, user:pass@)
-  - ✨ New: Random proxy rotation for all HTTP requests
-  - ✨ New: Proxy status display in main menu and module status
-  - ✨ New: ProxyManager class with load, rotate, and clear functions
-  - 🔧 Updated: All modules (Web Analyzer, Path Finder, Subdomain) use proxies
-
 ### Version 1.4.0
 
 - **Sensitive Path Finder v1.0.0**: New module for path discovery
-  - ✨ New: Admin/Login path scanning (40+ paths)
-  - ✨ New: CMS-specific paths (WordPress, Joomla, Drupal, Magento, Laravel)
-  - ✨ New: API endpoint discovery (REST, GraphQL, Swagger, OpenAPI)
-  - ✨ New: Sensitive file detection (.env, .git, backups, configs, logs)
-  - ✨ New: Multi-threaded scanning (10 concurrent threads)
-  - ✨ New: Custom wordlist support
-  - ✨ New: Batch scanning with path category selection
-
 - **Subdomain Enumeration v1.0.0**: New module for subdomain discovery
-  - ✨ New: DNS bruteforce with 150+ common subdomains
-  - ✨ New: Extended wordlist with 250+ subdomains for deep scans
-  - ✨ New: Certificate Transparency lookup via crt.sh
-  - ✨ New: Zone Transfer (AXFR) vulnerability testing
-  - ✨ New: Reverse DNS scanning on /24 network range
-  - ✨ New: Full enumeration combining all methods
-  - ✨ New: Custom wordlist support
-  - ✨ New: Batch enumeration across multiple domains
 
 ### Version 1.3.0
-
 - **Web Analyzer v2.0.0**: Major expansion with 12 scan types
-  - ✨ New: HTTP Methods vulnerability scanning (TRACE, PUT, DELETE detection)
-  - ✨ New: Content analysis (emails, meta tags, sensitive paths)
-  - ✨ New: Performance metrics (response time, compression, caching analysis)
-  - ✨ New: Enhanced SSL analysis with certificate warnings and expiry tracking
-  - ✨ New: Security headers with vulnerability recommendations
-  - ✨ New: IPv6 DNS records support (AAAA records)
-  - ✨ New: Expanded port scanning (21 ports including PostgreSQL, Redis, Elasticsearch)
-  - 🔧 Refactored: Structured JSON output with logical sections
-  - 🐛 Fixed: All spacing and formatting issues
-  - 📈 Improved: Better error handling and user feedback
 
 ### Version 1.2.5
 
