@@ -15,11 +15,11 @@
 ### Core Features
 
 - **🔌 Modular Architecture**: Plugin-based system for easy extension
-- **📊 Multiple Scan Types**: DNS, SSL, ports, headers, and more
 - **🎯 Target Management**: Single or batch target scanning
 - **🌐 Proxy Support**: HTTP/HTTPS proxy rotation from file lists
 - **💾 Persistent Configuration**: Save preferences between sessions
 - **📈 JSON Export**: Structured data for automation and reporting
+- **📈 Detailed Reporting**: Generated HTML writeups, PDF's, and optionally manage reports over a Flask Web Pannel
 
 ### Vulnerability Scanner Module (v1.0.0) - NEW 🔓
 
