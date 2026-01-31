@@ -6,9 +6,9 @@
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Syn2Much/CobraScan/graphs/commit-activity)
+![Animation](https://github.com/user-attachments/assets/5975113d-16ce-4056-881e-bd42e5235690)
 
 ---
-![Animation](https://github.com/user-attachments/assets/24c352a3-f529-468d-b253-28a01961f133)
 
 ## ✨ Features
 
